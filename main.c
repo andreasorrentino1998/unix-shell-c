@@ -50,6 +50,7 @@ int main(){
 
     free(command);
     free(working_dir);
+    return 0;
 }
 
 // PRECONDITION: None
@@ -60,8 +61,6 @@ int main(){
 // The pointer *command will be not modified.
 void parse_command(char *command, char **args, int *n_tokens){
     *n_tokens = 0;
-    
-    // Subdivide the command in tokens
     args[*n_tokens] = strtok(command, " ");
     while(args[*n_tokens] != NULL){
         *n_tokens = *n_tokens + 1;
